@@ -3,9 +3,13 @@ server:
 
 spring:
   application:
-    name: discovery-server
+    name: service-registry
 
 eureka:
+  instance:
+    hostname: "${HOSTNAME}.eureka"
   client:
     register-with-eureka: false
     fetch-registry: false
+    service-url:
+      defaultZone: ${EUREKA_SERVER_ADDRESS}
